@@ -1,0 +1,1 @@
+{"type":"skill","name":"agent-evaluation","version":"1.0.0","description":"Testing and benchmarking LLM agents including behavioral testing, capability assessment, reliability metrics, and production monitoring","license":"Apache-2.0","files":["SKILL.md"],"config":{}}
