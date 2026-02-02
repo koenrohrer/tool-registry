@@ -1,0 +1,8 @@
+{
+  "type": "skill",
+  "name": "code-review",
+  "version": "1.0.0",
+  "description": "Automated code review with best practices, security checks, and style enforcement",
+  "files": ["SKILL.md"],
+  "config": {}
+}

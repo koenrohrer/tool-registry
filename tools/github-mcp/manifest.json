@@ -1,0 +1,27 @@
+{
+  "type": "mcp_server",
+  "name": "github-mcp",
+  "version": "2.0.0",
+  "description": "MCP server for GitHub API access",
+  "runtime": "npx",
+  "config": {
+    "command": "npx",
+    "args": ["-y", "@anthropic/github-mcp"],
+    "env": {
+      "GITHUB_TOKEN": {
+        "required": true,
+        "sensitive": true,
+        "description": "GitHub personal access token"
+      }
+    }
+  },
+  "configFields": [
+    {
+      "key": "GITHUB_TOKEN",
+      "label": "GitHub Token",
+      "required": true,
+      "sensitive": true,
+      "description": "GitHub personal access token (fine-grained or classic)"
+    }
+  ]
+}

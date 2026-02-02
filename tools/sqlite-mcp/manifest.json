@@ -1,0 +1,29 @@
+{
+  "type": "mcp_server",
+  "name": "sqlite-mcp",
+  "version": "1.2.0",
+  "description": "MCP server for querying and managing SQLite databases",
+  "runtime": "npx",
+  "config": {
+    "command": "npx",
+    "args": ["-y", "@anthropic/sqlite-mcp"],
+    "env": {
+      "SQLITE_DB_PATH": {
+        "required": true,
+        "sensitive": false,
+        "description": "Path to the SQLite database file",
+        "defaultValue": "./data.db"
+      }
+    }
+  },
+  "configFields": [
+    {
+      "key": "SQLITE_DB_PATH",
+      "label": "Database Path",
+      "required": true,
+      "sensitive": false,
+      "description": "Path to the SQLite database file",
+      "defaultValue": "./data.db"
+    }
+  ]
+}

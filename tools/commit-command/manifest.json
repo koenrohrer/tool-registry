@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "smart-commit",
+  "version": "1.0.0",
+  "description": "Generate conventional commit messages from staged changes",
+  "files": ["smart-commit.md"],
+  "config": {}
+}
