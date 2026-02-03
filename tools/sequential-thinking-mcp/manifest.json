@@ -1,0 +1,11 @@
+{
+  "type": "mcp_server",
+  "name": "sequential-thinking",
+  "version": "1.0.0",
+  "description": "Dynamic and reflective problem-solving through structured thought sequences.",
+  "runtime": "npx",
+  "config": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+  }
+}

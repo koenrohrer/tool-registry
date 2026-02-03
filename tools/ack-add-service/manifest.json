@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "ack-add-service",
+  "version": "1.0.0",
+  "description": "Scaffold a new service for the ACK extension with dependency injection, Result types, and test boilerplate.",
+  "files": ["ack-add-service.md"],
+  "config": {}
+}

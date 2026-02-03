@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "ack-add-tool-type",
+  "version": "1.0.0",
+  "description": "Walk through adding a new tool type to ACK: enum, parser, writer, schema, adapter routing, and tests.",
+  "files": ["ack-add-tool-type.md"],
+  "config": {}
+}

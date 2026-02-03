@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "ack-validate-patterns",
+  "version": "1.0.0",
+  "description": "Audit the ACK codebase for pattern violations: import extensions, path hardcoding, parser throws, raw fs writes.",
+  "files": ["ack-validate-patterns.md"],
+  "config": {}
+}

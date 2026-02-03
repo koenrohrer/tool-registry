@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "write-tests",
+  "version": "1.0.0",
+  "description": "Generate thorough unit tests for a given file, matching the project's testing framework and patterns.",
+  "files": ["write-tests.md"],
+  "config": {}
+}

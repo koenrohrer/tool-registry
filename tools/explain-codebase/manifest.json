@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "explain-codebase",
+  "version": "1.0.0",
+  "description": "Generate a concise architectural overview of the project or a specific subsystem.",
+  "files": ["explain-codebase.md"],
+  "config": {}
+}

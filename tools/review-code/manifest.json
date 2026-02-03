@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "review-code",
+  "version": "1.0.0",
+  "description": "Perform a focused code review on a file or directory, checking for bugs, security issues, and improvements.",
+  "files": ["review-code.md"],
+  "config": {}
+}

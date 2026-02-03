@@ -1,0 +1,11 @@
+{
+  "type": "mcp_server",
+  "name": "filesystem",
+  "version": "1.0.0",
+  "description": "Secure file operations with configurable directory access controls.",
+  "runtime": "npx",
+  "config": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/username/projects"]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "hook",
+  "name": "dependency-change",
+  "version": "1.0.0",
+  "description": "Reminds you to run install after package.json, requirements.txt, or other dependency files change.",
+  "config": {
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "bash -c 'INPUT=$(cat); FILE=$(echo \"$INPUT\" | jq -r \".file_path // empty\"); BASENAME=$(basename \"$FILE\"); case \"$BASENAME\" in package.json) echo \"REMINDER: package.json changed. Run \\\"npm install\\\" to sync dependencies.\" >&2;; requirements.txt|requirements-*.txt) echo \"REMINDER: $BASENAME changed. Run \\\"pip install -r $BASENAME\\\" to sync dependencies.\" >&2;; pyproject.toml) echo \"REMINDER: pyproject.toml changed. Run your package manager (pip, poetry, uv) to sync.\" >&2;; Cargo.toml) echo \"REMINDER: Cargo.toml changed. Run \\\"cargo build\\\" to fetch new dependencies.\" >&2;; go.mod) echo \"REMINDER: go.mod changed. Run \\\"go mod tidy\\\" to sync dependencies.\" >&2;; Gemfile) echo \"REMINDER: Gemfile changed. Run \\\"bundle install\\\" to sync dependencies.\" >&2;; esac'"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "hook",
+  "name": "test-watcher",
+  "version": "1.0.0",
+  "description": "Reminds you to update or create tests when source files are modified.",
+  "config": {
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "bash -c 'INPUT=$(cat); FILE=$(echo \"$INPUT\" | jq -r \".file_path // empty\"); if [[ \"$FILE\" == *.ts || \"$FILE\" == *.tsx || \"$FILE\" == *.js || \"$FILE\" == *.jsx || \"$FILE\" == *.py ]]; then if [[ \"$FILE\" != *.test.* && \"$FILE\" != *.spec.* && \"$FILE\" != *test_* && \"$FILE\" != *_test.* ]]; then BASENAME=$(basename \"$FILE\" | sed \"s/\\.[^.]*$//\"); DIR=$(dirname \"$FILE\"); TEST_EXISTS=0; for pattern in \"$DIR/$BASENAME.test.\"* \"$DIR/$BASENAME.spec.\"* \"$DIR/__tests__/$BASENAME.\"* \"$DIR/../test/\"*\"$BASENAME\"*; do if ls $pattern 2>/dev/null | head -1 > /dev/null 2>&1; then TEST_EXISTS=1; break; fi; done; if [[ $TEST_EXISTS -eq 0 ]]; then echo \"REMINDER: No test file found for $FILE. Consider adding tests.\" >&2; fi; fi; fi'"
+      }
+    ]
+  }
+}

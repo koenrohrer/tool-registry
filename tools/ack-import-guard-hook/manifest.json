@@ -1,0 +1,16 @@
+{
+  "type": "hook",
+  "name": "ack-import-guard",
+  "version": "1.0.0",
+  "description": "Enforces .js extensions on all relative imports in TypeScript files, required for ESM compatibility in ACK.",
+  "config": {
+    "event": "PreToolUse",
+    "matcher": "Write|Edit",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "bash -c 'INPUT=$(cat); FILE=$(echo \"$INPUT\" | jq -r \".file_path // empty\"); if [[ \"$FILE\" == *.ts || \"$FILE\" == *.tsx ]] && [[ \"$FILE\" != *.d.ts ]]; then CONTENT=$(echo \"$INPUT\" | jq -r \".content // .new_string // empty\"); BAD=$(echo \"$CONTENT\" | grep -nE \"^(import|export).*from [\\x27\\\"]\\.\\.?/[^\\x27\\\"]+[^.][^j][^s][\\x27\\\"]\" 2>/dev/null | grep -v \"\\.js\" | head -5); if [[ -n \"$BAD\" ]]; then echo \"BLOCK: Relative imports must use .js extension (ESM requirement):\" >&2; echo \"$BAD\" >&2; exit 1; fi; fi'"
+      }
+    ]
+  }
+}

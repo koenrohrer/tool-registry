@@ -1,0 +1,16 @@
+{
+  "type": "hook",
+  "name": "ack-throw-guard",
+  "version": "1.0.0",
+  "description": "Warns when throw statements appear in ACK parser files -- parsers should return error-status NormalizedTool instead.",
+  "config": {
+    "event": "PreToolUse",
+    "matcher": "Write|Edit",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "bash -c 'INPUT=$(cat); FILE=$(echo \"$INPUT\" | jq -r \".file_path // empty\"); if [[ \"$FILE\" == *parsers/*.ts || \"$FILE\" == *parser.ts ]]; then CONTENT=$(echo \"$INPUT\" | jq -r \".content // .new_string // empty\"); THROWS=$(echo \"$CONTENT\" | grep -nE \"^\\s*throw\\s+(new\\s+)?Error\" | head -5); if [[ -n \"$THROWS\" ]]; then echo \"WARNING: throw statements in parser files. ACK parsers should return error-status NormalizedTool instead of throwing:\" >&2; echo \"$THROWS\" >&2; fi; fi'"
+      }
+    ]
+  }
+}

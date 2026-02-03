@@ -1,0 +1,16 @@
+{
+  "type": "hook",
+  "name": "secret-guard",
+  "version": "1.0.0",
+  "description": "Blocks commits and file writes that contain API keys, tokens, passwords, or other secrets.",
+  "config": {
+    "event": "PreToolUse",
+    "matcher": "Write|Edit",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "bash -c 'INPUT=$(cat); CONTENT=$(echo \"$INPUT\" | jq -r \".content // .new_string // empty\"); if echo \"$CONTENT\" | grep -qEi \"(AKIA[0-9A-Z]{16}|sk-[a-zA-Z0-9]{20,}|ghp_[a-zA-Z0-9]{36}|glpat-[a-zA-Z0-9\\-]{20}|xox[bposatr]-[a-zA-Z0-9\\-]+|(password|secret|token|api_key|apikey)\\s*[:=]\\s*[\"'\\x27][^\"'\\x27]{8,})\"; then echo \"BLOCK: Possible secret or credential detected in file content. Review before committing.\" >&2; exit 1; fi'"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "skill",
+  "name": "algorithmic-art",
+  "version": "1.0.0",
+  "description": "Create algorithmic art using p5.js with seeded randomness and interactive parameter exploration. For generative art, flow fields, and particle systems.",
+  "files": ["SKILL.md"],
+  "config": {}
+}

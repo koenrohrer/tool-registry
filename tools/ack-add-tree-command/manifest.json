@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "ack-add-tree-command",
+  "version": "1.0.0",
+  "description": "Add a new VS Code command to the ACK tool tree with handler, package.json registration, and menu contribution.",
+  "files": ["ack-add-tree-command.md"],
+  "config": {}
+}

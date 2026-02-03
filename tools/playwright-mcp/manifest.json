@@ -1,0 +1,11 @@
+{
+  "type": "mcp_server",
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "Browser automation and testing via Playwright. Interact with web pages through structured accessibility snapshots.",
+  "runtime": "npx",
+  "config": {
+    "command": "npx",
+    "args": ["@playwright/mcp@latest"]
+  }
+}

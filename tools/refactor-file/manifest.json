@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "refactor-file",
+  "version": "1.0.0",
+  "description": "Analyze a file for refactoring opportunities and apply targeted improvements.",
+  "files": ["refactor-file.md"],
+  "config": {}
+}

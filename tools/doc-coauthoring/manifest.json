@@ -1,0 +1,8 @@
+{
+  "type": "skill",
+  "name": "doc-coauthoring",
+  "version": "1.0.0",
+  "description": "Guide users through a structured workflow for co-authoring documentation, proposals, technical specs, decision docs, and similar structured content.",
+  "files": ["SKILL.md"],
+  "config": {}
+}

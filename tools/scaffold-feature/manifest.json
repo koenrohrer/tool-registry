@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "scaffold-feature",
+  "version": "1.0.0",
+  "description": "Scaffold a new feature with source file, test file, and exports following project conventions.",
+  "files": ["scaffold-feature.md"],
+  "config": {}
+}

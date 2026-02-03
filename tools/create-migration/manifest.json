@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "create-migration",
+  "version": "1.0.0",
+  "description": "Create a database migration file following the project's migration framework and naming conventions.",
+  "files": ["create-migration.md"],
+  "config": {}
+}

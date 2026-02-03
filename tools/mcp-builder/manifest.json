@@ -1,0 +1,8 @@
+{
+  "type": "skill",
+  "name": "mcp-builder",
+  "version": "1.0.0",
+  "description": "Guide for creating high-quality MCP servers that enable LLMs to interact with external services through well-designed tools. Covers Python (FastMCP) and TypeScript (MCP SDK).",
+  "files": ["SKILL.md"],
+  "config": {}
+}

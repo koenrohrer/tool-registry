@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "ack-add-parser",
+  "version": "1.0.0",
+  "description": "Scaffold a new parser for the ACK extension following the adapter pattern and error-handling conventions.",
+  "files": ["ack-add-parser.md"],
+  "config": {}
+}

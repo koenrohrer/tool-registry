@@ -1,0 +1,11 @@
+{
+  "type": "mcp_server",
+  "name": "git",
+  "version": "1.0.0",
+  "description": "Tools to read, search, and manipulate Git repositories.",
+  "runtime": "npx",
+  "config": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-git"]
+  }
+}

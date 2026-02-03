@@ -1,0 +1,11 @@
+{
+  "type": "mcp_server",
+  "name": "fetch",
+  "version": "1.0.0",
+  "description": "Web content fetching and conversion for efficient LLM usage.",
+  "runtime": "npx",
+  "config": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-fetch"]
+  }
+}

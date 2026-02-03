@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "name": "ack-debug-tool-loading",
+  "version": "1.0.0",
+  "description": "Debug why a specific tool isn't appearing or loading correctly in ACK by tracing the full read pipeline.",
+  "files": ["ack-debug-tool-loading.md"],
+  "config": {}
+}

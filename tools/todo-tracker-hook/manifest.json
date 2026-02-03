@@ -1,0 +1,16 @@
+{
+  "type": "hook",
+  "name": "todo-tracker",
+  "version": "1.0.0",
+  "description": "Logs a reminder after any file write that introduces a TODO, FIXME, HACK, or XXX comment.",
+  "config": {
+    "event": "PostToolUse",
+    "matcher": "Write|Edit",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "bash -c 'INPUT=$(cat); CONTENT=$(echo \"$INPUT\" | jq -r \".content // .new_string // empty\"); TODOS=$(echo \"$CONTENT\" | grep -nEi \"\\b(TODO|FIXME|HACK|XXX)\\b\" | head -5); if [[ -n \"$TODOS\" ]]; then FILE=$(echo \"$INPUT\" | jq -r \".file_path // empty\"); echo \"NOTE: TODOs found in $FILE:\" >&2; echo \"$TODOS\" >&2; echo \"Consider tracking these in your issue tracker.\" >&2; fi'"
+      }
+    ]
+  }
+}

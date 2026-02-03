@@ -1,0 +1,11 @@
+{
+  "type": "mcp_server",
+  "name": "memory",
+  "version": "1.0.0",
+  "description": "Knowledge graph-based persistent memory system for retaining context across sessions.",
+  "runtime": "npx",
+  "config": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-memory"]
+  }
+}

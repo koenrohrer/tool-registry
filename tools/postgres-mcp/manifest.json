@@ -1,0 +1,18 @@
+{
+  "type": "mcp_server",
+  "name": "postgres",
+  "version": "1.0.0",
+  "description": "Read-only PostgreSQL database access for querying and schema inspection.",
+  "runtime": "npx",
+  "config": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-postgres"],
+    "env": {
+      "POSTGRES_CONNECTION_STRING": {
+        "required": true,
+        "sensitive": true,
+        "description": "PostgreSQL connection string (e.g., postgresql://user:pass@localhost:5432/mydb)"
+      }
+    }
+  }
+}

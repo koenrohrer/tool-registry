@@ -1,0 +1,16 @@
+{
+  "type": "hook",
+  "name": "ack-scope-exhaustive",
+  "version": "1.0.0",
+  "description": "Warns when switch statements on ToolType or ConfigScope are missing a default case for exhaustive checking.",
+  "config": {
+    "event": "PreToolUse",
+    "matcher": "Write|Edit",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "bash -c 'INPUT=$(cat); FILE=$(echo \"$INPUT\" | jq -r \".file_path // empty\"); if [[ \"$FILE\" == */src/*.ts ]] && [[ \"$FILE\" != *test* ]]; then CONTENT=$(echo \"$INPUT\" | jq -r \".content // .new_string // empty\"); if echo \"$CONTENT\" | grep -qE \"switch\\s*\\(.*\\b(type|scope|toolType|configScope)\\b\"; then if ! echo \"$CONTENT\" | grep -qE \"default:\\s*(throw|assertNever)\"; then echo \"WARNING: switch on type/scope enum may not be exhaustive. Add a default: throw case for safety.\" >&2; fi; fi; fi'"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "hook",
+  "name": "ack-conventional-commit",
+  "version": "1.0.0",
+  "description": "Validates that commit messages follow conventional commit format (feat:, fix:, refactor:, etc.).",
+  "config": {
+    "event": "PreToolUse",
+    "matcher": "Bash",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "bash -c 'INPUT=$(cat); CMD=$(echo \"$INPUT\" | jq -r \".command // empty\"); if echo \"$CMD\" | grep -qE \"^git commit\"; then MSG=$(echo \"$CMD\" | grep -oP \"(?<=-m\\s[\\\"]|\\x27).*(?=[\\\"\\x27])\"); if [[ -n \"$MSG\" ]] && [[ ! \"$MSG\" =~ ^(feat|fix|chore|refactor|test|docs|ci|style|perf|build|revert)(\\(.+\\))?!?:\\ .+ ]]; then echo \"BLOCK: Commit message must follow conventional commits format.\" >&2; echo \"Expected: type(scope): description\" >&2; echo \"Types: feat, fix, chore, refactor, test, docs, ci, style, perf, build, revert\" >&2; echo \"Got: $MSG\" >&2; exit 1; fi; fi'"
+      }
+    ]
+  }
+}
